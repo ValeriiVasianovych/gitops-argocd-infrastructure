@@ -11,7 +11,7 @@ spec:
     namespace: crossplane-system
   source:
     path: "HelmCharts/crossplaneChart"
-    repoURL: "git@ssh.dev.azure.com:v3/Nokia-CNS-SaaS/CNS-SaaS-Dev/sdfc-gitops-poc"
+    repoURL: "git@github.com:ValeriiVasianovych/GitOps-ArgoCD-Infrastructure.git"
     targetRevision: HEAD
     helm:
       valueFiles:
