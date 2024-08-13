@@ -10,7 +10,7 @@ spec:
     name: in-cluster
     namespace: argocd
   source:
-    path: "projects/main-project/env-setup/applications"
+    path: "env-setup/applications"
     repoURL: "git@github.com:ValeriiVasianovych/GitOps-ArgoCD-Infrastructure.git"
     targetRevision: HEAD
     directory:
