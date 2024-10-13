@@ -371,11 +371,11 @@ extraContainerVolumes: []
 ##
 persistence:
   type: pvc
-  enabled: false
+  enabled: true
   # storageClassName: default
   accessModes:
     - ReadWriteOnce
-  size: 10Gi
+  size: 3Gi
   # annotations: {}
   finalizers:
     - kubernetes.io/pvc-protection
