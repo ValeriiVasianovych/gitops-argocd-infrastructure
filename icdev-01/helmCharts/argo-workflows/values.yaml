@@ -318,8 +318,7 @@ controller:
     #   value: "bar"
 
   # -- Extra arguments to be added to the controller
-  extraArgs:
-    - --auth-mode=server
+  extraArgs: []
   # -- Additional volume mounts to the controller main container
   volumeMounts: []
   # -- Additional volumes to the controller pod
