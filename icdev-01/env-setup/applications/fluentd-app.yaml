@@ -10,7 +10,11 @@ spec:
     server: https://kubernetes.default.svc
     namespace: fluentd
   source:
+<<<<<<< HEAD
     path: "icdev-01/env-setup/helmCharts/fluentd"
+=======
+    path: "icdev-01/helmCharts/helmCharts/fluentd"
+>>>>>>> e736f87 (update)
     repoURL: "git@github.com:ValeriiVasianovych/GitOps-ArgoCD-Infrastructure.git"
     targetRevision: HEAD
     helm:

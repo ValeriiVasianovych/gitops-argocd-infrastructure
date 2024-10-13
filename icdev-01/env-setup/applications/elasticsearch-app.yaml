@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: elastic-system
   source:
-    path: "helmCharts/elasticsearch"
+    path: "icdev-01/helmCharts/elasticsearch"
     repoURL: "git@github.com:ValeriiVasianovych/GitOps-ArgoCD-Infrastructure.git"
     targetRevision: HEAD
     helm:

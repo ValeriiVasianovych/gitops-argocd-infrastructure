@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: grafana
   source:
-    path: "helmCharts/grafana"
+    path: "icdev-01/helmCharts/grafana"
     repoURL: "git@github.com:ValeriiVasianovych/GitOps-ArgoCD-Infrastructure.git"
     targetRevision: HEAD
     helm:
