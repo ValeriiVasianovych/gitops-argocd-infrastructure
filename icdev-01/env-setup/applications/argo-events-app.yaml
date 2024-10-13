@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: argo-events
   source:
-    path: "icdev-01/helmCharts/argo-events"
+    path: "icdev-01/env-setup/argo-events"
     repoURL: "git@github.com:ValeriiVasianovych/GitOps-ArgoCD-Infrastructure.git"
     targetRevision: HEAD
     helm:
