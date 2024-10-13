@@ -4,7 +4,7 @@ metadata:
   name: workflow-example
   namespace: argo-workflows
 spec:
-  serviceAccountName: argo-workflows-workflow
+  serviceAccountName: argo-workflows-server
   entrypoint: hello-argo
   templates:
   - name: hello-argo
