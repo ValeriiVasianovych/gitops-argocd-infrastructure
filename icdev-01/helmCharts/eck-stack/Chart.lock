@@ -1,0 +1,27 @@
+dependencies:
+- name: eck-elasticsearch
+  repository: ""
+  version: 0.12.1
+- name: eck-kibana
+  repository: ""
+  version: 0.12.1
+- name: eck-agent
+  repository: ""
+  version: 0.12.1
+- name: eck-fleet-server
+  repository: ""
+  version: 0.12.1
+- name: eck-beats
+  repository: ""
+  version: 0.12.1
+- name: eck-logstash
+  repository: ""
+  version: 0.12.1
+- name: eck-apm-server
+  repository: ""
+  version: 0.12.1
+- name: eck-enterprise-search
+  repository: ""
+  version: 0.12.1
+digest: sha256:a6ef45a730b65b251d1f1b527bacbcd7877bdbb34c80202c358a85d0529fa266
+generated: "2024-09-03T21:08:52.766522681Z"
