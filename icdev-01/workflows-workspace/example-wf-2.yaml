@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: workflow-example-two
+  namespace: argo-workflows
+spec:
+  serviceAccountName: argo-sa
+  entrypoint: hello-argo
+  templates:
+  - name: hello-argo
+    container:
+      image: ubuntu:latest
+      command: ["echo"]
+      args: ["Hello, Argo!"]
