@@ -13,6 +13,8 @@ spec:
     path: "icdev-01/helmCharts/eck-stack"
     repoURL: "git@github.com:ValeriiVasianovych/GitOps-ArgoCD-Infrastructure.git"
     targetRevision: HEAD
+    directory:
+      recurse: true
     helm:
       valueFiles:
       - values.yaml
