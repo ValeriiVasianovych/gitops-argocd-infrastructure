@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: fluentd
+  name: elastic-search
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,9 +10,11 @@ spec:
     server: https://kubernetes.default.svc
     namespace: logging-system
   source:
-    path: "icdev-01/helmCharts/fluentd"
+    path: "icdev-01/helmCharts/elasticsearch"
     repoURL: "git@github.com:ValeriiVasianovych/GitOps-ArgoCD-Infrastructure.git"
     targetRevision: HEAD
+    directory:
+      recurse: true
     helm:
       valueFiles:
       - values.yaml
