@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: crossplane
+  name: crossplane-workspace
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -13,9 +13,6 @@ spec:
     path: "icdev-01/crossplane-workspace"
     repoURL: "git@github.com:ValeriiVasianovych/GitOps-ArgoCD-Infrastructure.git"
     targetRevision: HEAD
-    helm:
-      valueFiles:
-      - values.yaml
   project: default
   syncPolicy:
     syncOptions:
