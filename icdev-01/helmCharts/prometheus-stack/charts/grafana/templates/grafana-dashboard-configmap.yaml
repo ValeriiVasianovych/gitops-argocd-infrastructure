@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboards
+  labels:
+    grafana_dashboard: "1"
+data:
+  argo-cd.json: |
+{{ .Files.Get "dashboards/argo-cd.json" | indent 4 }}
+  argo-workflows.json: |
+{{ .Files.Get "dashboards/argo-workflows.json" | indent 4 }}
+  core-dns.json: |
+{{ .Files.Get "dashboards/core-dns.json" | indent 4 }}
+  kubernetes-full.json: |
+{{ .Files.Get "dashboards/kubernetes-full.json" | indent 4 }}
+  node-exporter-full.json: |
+{{ .Files.Get "dashboards/node-exporter-full.json" | indent 4 }}

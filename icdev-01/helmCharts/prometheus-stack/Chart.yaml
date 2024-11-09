@@ -1,0 +1,8 @@
+apiVersion: v1
+appVersion: v0.77.2
+description: A Helm chart for Prometheus Stack (Prometheus Operator, Grafana, kube-state-metrics, node-exporter)
+name: prometheus-stack
+version: 1.0.0
+maintainers:
+- email: csf-saas-pl@LIST.NOKIA.COM
+  name: SaaS Team
