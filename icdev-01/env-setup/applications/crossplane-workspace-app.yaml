@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: crossplane-system
   source:
-    path: "icdev-01/crossplane-workspace"
+    path: "icdev-01/crossplane-workspace/resources"
     repoURL: "git@github.com:ValeriiVasianovych/GitOps-ArgoCD-Infrastructure.git"
     targetRevision: HEAD
   project: default
