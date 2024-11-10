@@ -1,7 +1,7 @@
 apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  generateName: minikube-crossplane-bucket-v1-
+  name: minikube-crossplane-bucket-v1
 spec:
   forProvider:
     region: us-east-1
