@@ -1101,7 +1101,7 @@ grafana:
         # datasourceUid: Jaeger
         # traceIdLabelName: trace_id
       alertmanager:
-        enabled: true
+        enabled: false
         name: Alertmanager
         uid: alertmanager
         handleGrafanaManagedAlerts: false

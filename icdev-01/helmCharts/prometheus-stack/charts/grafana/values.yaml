@@ -375,7 +375,7 @@ persistence:
   # storageClassName: default
   accessModes:
     - ReadWriteOnce
-  size: 8Gi
+  size: 3Gi
   # annotations: {}
   finalizers:
     - kubernetes.io/pvc-protection
@@ -740,12 +740,9 @@ dashboardProviders:
 ##
 ## dashboards per provider, use provider name as key.
 ##
-# dashboards:
+dashboards: {}
   # default:
-  #   kubernetes-full:
-  #     gnetId: 18283
-  #     revision: 1
-  #     datasource: Prometheus
+  #   some-dashboard:
   #     json: |
   #       $RAW_JSON
   #   custom-dashboard:
