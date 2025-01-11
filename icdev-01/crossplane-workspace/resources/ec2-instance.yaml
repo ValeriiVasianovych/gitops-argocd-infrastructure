@@ -10,3 +10,4 @@ spec:
     keyName: ServersKey
   providerConfigRef:
     name: default
+    namespace: crossplane-system
