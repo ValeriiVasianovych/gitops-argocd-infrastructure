@@ -1,9 +1,9 @@
-apiVersion: s3.aws.upbound.io/v1beta1
-kind: Bucket
-metadata:
-  name: minikube-crossplane-bucket-v1
-spec:
-  forProvider:
-    region: us-east-1
-  providerConfigRef:
-    name: default
+# apiVersion: s3.aws.upbound.io/v1beta1
+# kind: Bucket
+# metadata:
+#   name: minikube-crossplane-bucket-v1
+# spec:
+#   forProvider:
+#     region: us-east-1
+#   providerConfigRef:
+#     name: provider-config
