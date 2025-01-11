@@ -6,3 +6,14 @@ metadata:
   namespace: crossplane-system
 spec:
   package: xpkg.upbound.io/upbound/provider-aws-s3:v1.17.0
+
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-aws-vpc
+  namespace: crossplane-system
+spec:
+  package: xpkg.upbound.io/upbound/provider-aws-vpc:v1
+
+---
