@@ -1,0 +1,114 @@
+# Route Table
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: RouteTable
+metadata:
+  name: private
+  namespace: crossplane-system
+spec:
+  forProvider:
+    region: us-east-1
+    vpcIdRef:
+      name: test-vpc
+    tags:
+      Name: private
+
+# Route
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: Route
+metadata:
+  name: private
+spec:
+  forProvider:
+    destinationCidrBlock: 0.0.0.0/0
+    natGatewayIdRef:
+      name: nat-gateway-a
+    region: us-east-1
+    routeTableIdRef:
+      name: private
+
+# Route Table
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: RouteTable
+metadata:
+  name: public
+spec:
+  forProvider:
+    region: us-east-1
+    tags:
+      Name: public
+    vpcIdRef:
+      name: test-vpc
+
+# Route
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: Route
+metadata:
+  name: public
+spec:
+  forProvider:
+    destinationCidrBlock: 0.0.0.0/0
+    gatewayIdRef:
+      name: igw
+    region: us-east-1
+    routeTableIdRef:
+      name: public
+
+# Route Table Association private subnet A
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: RouteTableAssociation
+metadata:
+  name: private-subnet-a
+spec:
+  forProvider:
+    region: us-east-1
+    routeTableIdRef:
+      name: private
+    subnetIdRef:
+      name: private-subnet-a
+
+# Route Table Association private subnet B
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: RouteTableAssociation
+metadata:
+  name: private-subnet-b
+spec:
+  forProvider:
+    region: us-east-1
+    routeTableIdRef:
+      name: private
+    subnetIdRef:
+      name: private-subnet-b
+
+# Route Table Association public subnet A
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: RouteTableAssociation
+metadata:
+  name: public-subnet-a
+spec:
+  forProvider:
+    region: us-east-1
+    routeTableIdRef:
+      name: public
+    subnetIdRef:
+      name: public-subnet-a
+
+# Route Table Association public subnet B
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: RouteTableAssociation
+metadata:
+  name: public-subnet-b
+spec:
+  forProvider:
+    region: us-east-1
+    routeTableIdRef:
+      name: public
+    subnetIdRef:
+      name: public-subnet-b

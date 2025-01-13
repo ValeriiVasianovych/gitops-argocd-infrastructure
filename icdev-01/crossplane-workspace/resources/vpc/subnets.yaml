@@ -1,0 +1,75 @@
+# Public Subnet A
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: Subnet
+metadata:
+  name: public-subnet-a
+  namespace: crossplane-system
+spec:
+  forProvider:
+    region: us-east-1
+    cidrBlock: "10.0.10.0/24"
+    vpcIdRef:
+      name: test-vpc
+    mapPublicIpOnLaunch: true
+    tags:
+      Name: public-subnet-a
+  providerConfigRef:
+    name: default
+
+# Public Subnet B
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: Subnet
+metadata:
+  name: public-subnet-b
+  namespace: crossplane-system
+spec:
+  forProvider:
+    region: us-east-1
+    cidrBlock: "10.0.11.0/24"
+    vpcIdRef:
+      name: test-vpc
+    mapPublicIpOnLaunch: true
+    tags:
+      Name: public-subnet-b
+  providerConfigRef:
+    name: default
+
+# Private Subnet A
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: Subnet
+metadata:
+  name: private-subnet-a
+  namespace: crossplane-system
+spec:
+  forProvider:
+    region: us-east-1
+    cidrBlock: "10.0.20.0/24"
+    vpcIdRef:
+      name: test-vpc
+    mapPublicIpOnLaunch: false
+    tags:
+      Name: private-subnet-a
+  providerConfigRef:
+    name: default
+
+# Private Subnet B
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: Subnet
+metadata:
+  name: private-subnet-b
+  namespace: crossplane-system
+spec:
+  forProvider:
+    region: us-east-1
+    cidrBlock: "10.0.21.0/24"
+    vpcIdRef:
+      name: test-vpc
+    mapPublicIpOnLaunch: false
+    tags:
+      Name: private-subnet-b
+  providerConfigRef:
+    name: default

@@ -1,0 +1,14 @@
+# Internet Gateway
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: InternetGateway
+metadata:
+  name: igw
+  namespace: crossplane-system
+spec:
+  forProvider:
+    region: us-east-1
+    vpcIdRef:
+      name: test-vpc
+    tags:
+      Name: igw

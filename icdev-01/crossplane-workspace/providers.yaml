@@ -21,5 +21,15 @@ apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
   name: provider-aws-ec2
+  namespace: crossplane-system
 spec:
   package: xpkg.upbound.io/upbound/provider-aws-ec2:v1
+  
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-aws
+  namespace: crossplane-system
+spec:
+  package: xpkg.upbound.io/crossplane-contrib/provider-aws:v0.51.0

@@ -1,0 +1,70 @@
+
+# Elastic IP for NAT Gateway A
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: EIP
+metadata:
+  name: eip-nat-a
+  namespace: crossplane-system
+spec:
+  forProvider:
+    region: us-east-1
+    vpc: true
+    tags:
+      Name: eip-nat-a
+  providerConfigRef:
+    name: default
+
+# Elastic IP for NAT Gateway B
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: EIP
+metadata:
+  name: eip-nat-b
+  namespace: crossplane-system
+spec:
+  forProvider:
+    region: us-east-1
+    vpc: true
+    tags:
+      Name: eip-nat-b
+  providerConfigRef:
+    name: default
+
+# NAT Gateway A
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: NATGateway
+metadata:
+  name: nat-gateway-a
+  namespace: crossplane-system
+spec:
+  forProvider:
+    region: us-east-1
+    subnetIdRef:
+      name: public-subnet-a
+    allocationIdRef:
+      name: eip-nat-a
+    tags:
+      Name: nat-gateway-a
+  providerConfigRef:
+    name: default
+
+# NAT Gateway B
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: NATGateway
+metadata:
+  name: nat-gateway-b
+  namespace: crossplane-system
+spec:
+  forProvider:
+    region: us-east-1
+    subnetIdRef:
+      name: public-subnet-b
+    allocationIdRef:
+      name: eip-nat-b
+    tags:
+      Name: nat-gateway-b
+  providerConfigRef:
+    name: default
