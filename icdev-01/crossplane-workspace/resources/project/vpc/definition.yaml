@@ -34,9 +34,8 @@ spec:
                   description: Tags to apply to the VPC and related resources.
                 vpcId:
                   type: string
-                  description: The VPC ID to associate with resources.
+                  description: The ID of the VPC.
               required:
                 - cidr
                 - region
                 - tags
-                

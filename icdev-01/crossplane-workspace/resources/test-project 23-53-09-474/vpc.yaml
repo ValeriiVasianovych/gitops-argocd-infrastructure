@@ -1,8 +1,0 @@
-apiVersion: ec2.aws.upbound.io/v1beta1
-kind: VPCClaim
-metadata:
-  name: my-vpc
-  namespace: crossplane-system
-spec:
-  compositionSelector:
-    matchControllerRef: vpc-composition
