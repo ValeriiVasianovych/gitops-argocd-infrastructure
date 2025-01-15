@@ -1,0 +1,43 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: vpc-composition
+spec:
+  compositeTypeRef:
+    apiVersion: example.org/v1alpha1
+    kind: XVPC
+  resources:
+    # VPC
+    - name: vpc
+      base:
+        apiVersion: ec2.aws.upbound.io/v1beta1
+        kind: VPC
+        spec:
+          forProvider:
+            cidrBlock: ""
+            region: ""
+            tags: {}
+      patches:
+        - fromFieldPath: spec.cidr
+          toFieldPath: spec.forProvider.cidrBlock
+        - fromFieldPath: spec.region
+          toFieldPath: spec.forProvider.region
+        - fromFieldPath: spec.tags
+          toFieldPath: spec.forProvider.tags
+
+    # Internet Gateway
+    - name: igw
+      base:
+        apiVersion: ec2.aws.upbound.io/v1beta1
+        kind: InternetGateway
+        spec:
+          forProvider:
+            region: ""
+            vpcIdRef:
+              name: "vpc"
+            tags: {}
+      patches:
+        - fromFieldPath: spec.region
+          toFieldPath: spec.forProvider.region
+        - fromFieldPath: spec.tags
+          toFieldPath: spec.forProvider.tags

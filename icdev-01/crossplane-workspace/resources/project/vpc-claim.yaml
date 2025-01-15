@@ -1,0 +1,10 @@
+apiVersion: example.org/v1alpha1
+kind: VPC
+metadata:
+  name: crossplane-vpc
+  namespace: crossplane-system
+spec:
+  region: "us-east-1"
+  cidr: "10.0.0.0/16"
+  tags:
+    Name: "crossplane-vpc"

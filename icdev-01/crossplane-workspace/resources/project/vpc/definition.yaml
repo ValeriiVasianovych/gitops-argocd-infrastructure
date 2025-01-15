@@ -1,0 +1,42 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xvpcs.example.org
+spec:
+  group: example.org
+  names:
+    kind: XVPC
+    plural: xvpcs
+  claimNames:
+    kind: VPC
+    plural: vpcs
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                cidr:
+                  type: string
+                  description: The CIDR block for the VPC.
+                region:
+                  type: string
+                  description: The region for the VPC.
+                tags:
+                  type: object
+                  additionalProperties:
+                    type: string
+                  description: Tags to apply to the VPC and related resources.
+                vpcId:
+                  type: string
+                  description: The VPC ID to associate with resources.
+              required:
+                - cidr
+                - region
+                - tags
+                

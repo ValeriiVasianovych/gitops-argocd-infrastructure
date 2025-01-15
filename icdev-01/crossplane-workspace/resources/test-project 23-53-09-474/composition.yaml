@@ -1,0 +1,23 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: vpc-composition
+  namespace: crossplane-system
+spec:
+  compositeTypeRef:
+    apiVersion: ec2.aws.upbound.io/v1beta1
+    kind: VPCClaim  # Тип ресурса, который создается через композицию
+  resources:
+    - name: vpc
+      base:
+        apiVersion: ec2.aws.upbound.io/v1beta1
+        kind: VPC
+        spec:
+          cidrBlock: 10.0.0.0/16
+          enableDnsSupport: true
+          enableDnsHostnames: true
+          instanceTenancy: default
+      patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: "metadata.name"
+          toFieldPath: "metadata.name"

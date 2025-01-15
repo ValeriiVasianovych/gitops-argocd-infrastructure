@@ -1,0 +1,17 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: vpc-def
+  namespace: crossplane-system
+spec:
+  group: ec2.aws.upbound.io
+  kind: VPC
+  names:
+    kind: VPC
+    singular: vpc
+    plural: vpcs
+  claimNames:
+    kind: VPCClaim
+  writeConnectionSecretToRef:
+    name: vpc-connection
+    namespace: crossplane-vpc
